@@ -38,16 +38,6 @@
       padding: 2rem 1rem 2rem 1rem;
     }
 
-    .btn-default {
-      background-color: #333;
-      color: #66bb6a;      
-    }
-
-    .btn-active {
-      background-color: #66bb6a;
-      color: #333;      
-    }
-
     .nav-button {
       border: 1px solid #66bb6a;
       padding: 0.7rem 2rem;
@@ -61,17 +51,14 @@
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-    }
-
-    .nav-button:hover {
-      background-color: #66bb6a;
-      color: #333;      
-      border-color: #66bb6a;
+      background-color: #333;
+      color: #66bb6a;
+      font-weight: 700;
     }
 
     .nav-button.active {
       background-color: #66bb6a;
-      color: #1a1a1a;
+      color: #333;
       border-color: #66bb6a;
     }
 
@@ -158,20 +145,12 @@
         font-size: 1rem;
         cursor: pointer;
         transition: background-color 0.3s;
+        background-color: #1a1a1a;
+        color: #424242;
+        font-weight: 700;
       }
       .mobile-nav button.active {
-        background-color: #66bb6a;
-        color: #1a1a1a;
-      }
-
-      .btn-default {
-        background-color: #333;
-        color: #66bb6a;      
-      }
-
-      .btn-active {
-        background-color: #66bb6a;
-        color: #333;      
+        color: #66bb6a;
       }
 
       /* 카드 레이아웃이 아닌 플랫 레이아웃 */
@@ -199,9 +178,9 @@
 <body>
   <div class="container">
     <div class="left-nav">
-      <button class="nav-button btn-active" id="left-about" onclick="showSection('about')">소개</button>
-      <button class="nav-button btn-default" id="left-projects" onclick="showSection('projects')">프로젝트</button>
-      <button class="nav-button btn-default" id="left-contact" onclick="showSection('contact')">연락처</button>
+      <button class="nav-button" id="left-about" onclick="showSection('about')">소개</button>
+      <button class="nav-button" id="left-projects" onclick="showSection('projects')">프로젝트</button>
+      <button class="nav-button" id="left-contact" onclick="showSection('contact')">연락처</button>
     </div>
     <div class="content-area">
       <section id="about" class="card active">
@@ -224,9 +203,9 @@
   </div>
   <!-- 모바일 하단 네비게이션 -->
   <div class="mobile-nav">
-    <button onclick="showSection('about')" class="mobile-button btn-active" id="mobile-about">소개</button>
-    <button onclick="showSection('projects')" class="mobile-button btn-active" id="mobile-projects">프로젝트</button>
-    <button onclick="showSection('contact')" class="mobile-button btn-active" id="mobile-contact">연락처</button>
+    <button onclick="showSection('about')" class="mobile-button" id="mobile-about">소개</button>
+    <button onclick="showSection('projects')" class="mobile-button" id="mobile-projects">프로젝트</button>
+    <button onclick="showSection('contact')" class="mobile-button" id="mobile-contact">연락처</button>
   </div>
 
   <script>
@@ -242,26 +221,20 @@
       // Menu(Desktop)
       const navButtons = document.querySelectorAll('.nav-button');
       navButtons.forEach(navButton => {
-        navButton.classList.remove('btn-default');
-        navButton.classList.remove('btn-active');
+        navButton.classList.remove('active');
 
         if (navButton.id.includes(target.id)) {
-          navButton.classList.add('btn-active');
-        } else {
-          navButton.classList.add('btn-default');
+          navButton.classList.add('active');
         }
       });
 
       // Menu(Mobile)
       const mobileButtons = document.querySelectorAll('.mobile-button');
       mobileButtons.forEach(mobileButton => {
-        mobileButton.classList.remove('btn-default');
-        mobileButton.classList.remove('btn-active');
+        mobileButton.classList.remove('active');
 
         if (mobileButton.id.includes(target.id)) {
-          mobileButton.classList.add('btn-active');
-        } else {
-          mobileButton.classList.add('btn-default');
+          mobileButton.classList.add('active');
         }
       });
       
