@@ -119,7 +119,11 @@
       border-radius: 2px;
     }
 
-    .card p {
+    .card pre {
+      white-space: pre-wrap;       /* pre 형식 유지 + 줄바꿈 허용 */
+      word-break: break-word;      /* 긴 단어 강제 줄바꿈 */
+      overflow-wrap: break-word;   /* 일부 브라우저 대응 */
+      font-family: 'Noto Sans KR', Arial, sans-serif;
       color: #ccc;
     }
 
@@ -167,10 +171,13 @@
         color: #66bb6a;
         margin-bottom: 0.5rem;
       }
-      .card p {
+      .card pre {
         color: #bbb;
         font-size: 1rem;
         margin-bottom: 1.5rem;
+        white-space: pre-wrap;       /* pre 형식 유지 + 줄바꿈 허용 */
+        word-break: break-word;      /* 긴 단어 강제 줄바꿈 */
+        overflow-wrap: break-word;   /* 일부 브라우저 대응 */
       }
     }
   </style>
@@ -185,11 +192,18 @@
     <div class="content-area">
       <section id="about" class="card active">
         <h2>소개</h2>
-        <p>안녕하세요! 최신 트렌드와 사용자 경험을 중시하는 풀스택 개발자 최기운입니다.<br>
-        3년 이상의 실무 경험을 바탕으로, React, Vue, TypeScript 등 최신 웹 기술을 활용해 다양한 서비스를 성공적으로 구축했습니다.<br>
-        팀원들과의 원활한 소통과 협업, 문제 해결 능력을 강점으로 삼고 있으며, 코드 품질과 효율적인 개발 프로세스에 많은 관심을 가지고 있습니다.<br>
-        새로운 기술 습득과 성장에 대한 열정으로, 오픈소스 프로젝트에도 꾸준히 기여하고 있습니다.<br>
-        기업의 비즈니스 목표 달성을 위해 항상 최적의 솔루션을 고민합니다.</p>
+<pre>안녕하세요. 풀스택 개발자 최기운입니다.
+
+저는 기술을 단순히 사용하는 것이 아니라,
+근본적인 원리와 구조를 이해하며 문제를 해결하는 개발자입니다.
+
+급한 해결보다 문제의 본질을 분석하고 구조적으로 개선하는 접근을 중요하게 생각합니다.
+
+또한 협업에서는 관계와 팀워크를 소중히 여기며,
+갈등 상황에서도 감정을 조율하고 먼저 대화를 통해 원만한 협업 분위기를 만드는 데 강점이 있습니다.
+
+기술과 사람 모두에 집중하며,
+본질을 놓치지 않는 태도로 성장해 나가고 있습니다.</pre>
       </section>
       <section id="projects" class="card">
         <h2>프로젝트</h2>
