@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>최기운 | 포트폴리오</title>
+  <title>홍길도 | 포트폴리오</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
   <style>
     body {
       font-family: 'Noto Sans KR', Arial, sans-serif;
@@ -66,8 +66,7 @@
       flex: 1;
       overflow-y: auto;
       overflow-x: hidden;
-      display: flex;
-      justify-content: center;
+      display: block;
       padding: 2rem;
       box-sizing: border-box;
     }
@@ -127,8 +126,33 @@
       color: #ccc;
     }
 
+    .tech-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80px;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+    .tech-item img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      margin-bottom: 0.5rem;
+    }
+
     /* 모바일 사이즈에서 네비게이션 바를 하단 탭으로 변경 */
     @media (max-width: 768px) {
+      .content-area {
+        flex: 1;
+        overflow-y: auto;
+        overflow-x: hidden;
+        display: block;
+        padding: 2rem;
+        box-sizing: border-box;
+        padding-bottom: 4rem;
+      }
+
       .left-nav {
         display: none;
       }
@@ -187,6 +211,7 @@
     <div class="left-nav">
       <button class="nav-button" id="left-about" onclick="showSection('about')">소개</button>
       <button class="nav-button" id="left-projects" onclick="showSection('projects')">프로젝트</button>
+      <button class="nav-button" id="left-tech_stack" onclick="showSection('tech_stack')">기술 스택</button>
       <button class="nav-button" id="left-contact" onclick="showSection('contact')">연락처</button>
     </div>
     <div class="content-area">
@@ -209,6 +234,55 @@
         <h2>프로젝트</h2>
         <p>여러 프로젝트 목록이 여기에 표시됩니다.</p>
       </section>
+      <section id="tech_stack" class="card">
+        <h2>기술 스택</h2>
+      
+        <!-- 개발 언어 -->
+        <h3 style="margin-top: 1.5rem;">개발 언어</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+          <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" /><span>PHP</span></div>
+          <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" /><span>Java</span></div>
+          <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" /><span>JavaScript</span></div>
+        </div>
+
+        <!-- 라이브러리 & 프레임워크 -->
+        <h3 style="margin-top: 1.5rem;">라이브러리 & 프레임워크</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+          <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" /><span>React.js</span></div>
+          <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" /><span>Next.js</span></div>
+          <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Express.js" /><span>Express.js</span></div>
+          <div class="tech-item"><img src="https://nestjs.com/img/logo-small.svg" alt="Nest.js" style="background: white; border-radius: 5px;" /><span>Nest.js</span></div>
+        </div>
+      
+        <!-- 서버 -->
+        <h3 style="margin-top: 1.5rem;">웹 서버 & WAS</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+          <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" alt="Apache" /><span>Apache</span></div>
+          <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="Nginx" /><span>Nginx</span></div>
+          <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tomcat/tomcat-original.svg" alt="Tomcat" /><span>Tomcat</span></div>
+        </div>
+      
+        <!-- OS & Docker -->
+        <h3 style="margin-top: 1.5rem;">운영체제 & 가상화</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+          <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg" alt="Ubuntu" /><span>Ubuntu</span></div>
+          <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" /><span>Docker</span></div>
+        </div>
+      
+        <!-- DB -->
+        <h3 style="margin-top: 1.5rem;">데이터베이스</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+          <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MariaDB" /><span>MariaDB</span></div>
+        </div>
+      
+        <!-- 형상/버전관리 -->
+        <h3 style="margin-top: 1.5rem;">형상/버전 관리</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+          <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" /><span>Git</span></div>
+          <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" /><span>GitHub</span></div>
+          <div class="tech-item"><img src="https://icon-library.com/images/svn-icon/svn-icon-1.png" alt="SVN" /><span>SVN</span></div>
+        </div>
+      </section>
       <section id="contact" class="card">
         <h2>연락처</h2>
         <p>choikiwoon@example.com</p>
@@ -219,6 +293,7 @@
   <div class="mobile-nav">
     <button onclick="showSection('about')" class="mobile-button" id="mobile-about">소개</button>
     <button onclick="showSection('projects')" class="mobile-button" id="mobile-projects">프로젝트</button>
+    <button onclick="showSection('tech_stack')" class="mobile-button" id="mobile-tech_stack">기술 스택</button>
     <button onclick="showSection('contact')" class="mobile-button" id="mobile-contact">연락처</button>
   </div>
 
